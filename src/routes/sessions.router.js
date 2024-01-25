@@ -57,23 +57,28 @@ router.post("/restart/:id", async (req, res) => {
   const { id } = req.params  
   const user = await uManager.findUserByID(id);  
      
-
-  try {    
-    
-    if (pass !== repeat){
-      return res.json({ message: "Passwords must match" });
-    }
-    const isPassRepeated = await compareData(pass, user.password)
-    if(isPassRepeated){
-      return res.json({ message: "This password is not allowed" });
-    }     
-    const newHashedPassword = await hashData(pass);    
-    user.password = newHashedPassword;
-    await user.save();
-    res.status(200).json({ message: "Password updated", user });
-  } catch (error) {
-    res.status(500).json({ error });
-  }    
+  if(req.cookies.tokencito){
+      try {    
+      
+        if (pass !== repeat){
+          return res.json({ message: "Passwords must match" });
+        }
+        const isPassRepeated = await compareData(pass, user.password)
+        if(isPassRepeated){
+          return res.json({ message: "This password is not allowed" });
+        }     
+        const newHashedPassword = await hashData(pass);    
+        user.password = newHashedPassword;
+        await user.save();
+        res.status(200).json({ message: "Password updated", user });
+      } catch (error) {
+        res.status(500).json({ error });
+      }
+  } else {
+    console.log("No hay token en las cookies. Redirigiendo manualmente a /restore");
+    return res.redirect("/restore")
+  }
+      
 });
 
 
