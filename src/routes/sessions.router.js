@@ -48,40 +48,33 @@ router.post('/login', passport.authenticate('login', {failureMessage: true, fail
     res.cookie('token', token, { maxAge: 90000, httpOnly: true })
     res.json({message: 'Loged'}) //este para loggear desde el thunderclient
     /* return res.redirect('/api/sessions/current') */
-    console.log("req.user del login de session router", req.user)
+    /* console.log("req.user del login de session router", req.user) */
 }) 
-
-
 
 
 router.post("/restart/:id", async (req, res) => { 
   const { pass, repeat } = req.body;
   const { id } = req.params
-  const user = await uManager.findUserByID(id);
+  console.log(1);
+  const user = await uManager.findUserByID(id);  
+     
 
-  
-  /* let tokencito =  "" */
-  // console.log("CONSOLELOG DE REQ.COOKIES", req.cookies)
-  if (req.cookies.tokencito){
-    /* tokencito = req.cookies.tokencito  */   
-    try {    
-      if (pass !== repeat){
-        return res.json({ message: "Passwords must match" });
-      }
-      const isPassRepeated = await compareData(pass, user.password)
-      if(isPassRepeated){
-        return res.json({ message: "This password is not allowed" });
-      }     
-      const newHashedPassword = await hashData(pass);    
-      user.password = newHashedPassword;
-      await user.save();
-      res.status(200).json({ message: "Password updated", user });
-    } catch (error) {
-      res.status(500).json({ error });
+  try {    
+    
+    if (pass !== repeat){
+      return res.json({ message: "Passwords must match" });
     }
-  } else {
-    return res.redirect("/restore")
-  }  
+    const isPassRepeated = await compareData(pass, user.password)
+    if(isPassRepeated){
+      return res.json({ message: "This password is not allowed" });
+    }     
+    const newHashedPassword = await hashData(pass);    
+    user.password = newHashedPassword;
+    await user.save();
+    res.status(200).json({ message: "Password updated", user });
+  } catch (error) {
+    res.status(500).json({ error });
+  }    
 });
 
 
@@ -102,9 +95,11 @@ router.post("/restore", async (req, res) => {
       `,
     });
 
-    const tokencito = generateToken({email})    
+    const tokencito = generateToken({email}) 
+       
     res.cookie('tokencito', tokencito, { maxAge: 3600000, httpOnly: true })
-    /* console.log("tokencito", tokencito) */
+    console.log("tokencito", tokencito)
+    
     res.status(200).json({ message: "Recovery email sent" });
   } catch (error) {
     res.status(500).json({ message: error.message });

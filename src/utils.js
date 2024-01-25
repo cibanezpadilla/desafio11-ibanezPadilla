@@ -21,7 +21,7 @@ export const compareData = async (data, hashedData) => {
 
 export const generateToken = (user) => {
   const token = jwt.sign(user, SECRET_KEY_JWT, { expiresIn: 300 });
-  logger.info(token)
+  /* logger.info(token) */
   /* logger.info({ message: "token en logger", token });//escribirlo asi si quiero pasarle un titulo
   console.log("token en consolelog", token) */
   return token;

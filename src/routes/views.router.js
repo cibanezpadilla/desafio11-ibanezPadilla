@@ -66,8 +66,13 @@ router.get("/restore", (req, res) => {
 });
 
 router.get("/restart/:id", (req, res) => {
-  const {id} = req.params
-  res.render("restart", {style: "restart", id});
+  if (req.cookies.tokencito){
+    const {id} = req.params  
+    res.render("restart", {style: "restart", id});
+  } else {
+    console.log("No hay token en las cookies. Redirigiendo manualmente a /restore");
+    return res.redirect("/restore")
+  }
 });
 
 
