@@ -1,0 +1,157 @@
+{
+  code: 404,
+  name: 'CART_NOT_FOUND',
+  level: 'error',
+  timestamp: '2024-01-22T21:13:04.793Z'
+}
+{ level: 'error', timestamp: '2024-01-24T02:08:48.551Z' }
+{ level: 'error', timestamp: '2024-01-24T02:10:00.899Z' }
+{
+  errors: {
+    thumbnail: CastError: Cast to string failed for value "[ 'camisaLira.jpg' ]" (type Array) at path "thumbnail"
+        at SchemaString.cast (C:\Users\ludiv\Downloads\Backend\Practicando\Desafio11\node_modules\mongoose\lib\schema\string.js:606:11)
+        at SchemaType.applySetters (C:\Users\ludiv\Downloads\Backend\Practicando\Desafio11\node_modules\mongoose\lib\schemaType.js:1221:12)
+        at model.$set (C:\Users\ludiv\Downloads\Backend\Practicando\Desafio11\node_modules\mongoose\lib\document.js:1418:22)
+        at model.$set (C:\Users\ludiv\Downloads\Backend\Practicando\Desafio11\node_modules\mongoose\lib\document.js:1115:16)
+        at model.Document (C:\Users\ludiv\Downloads\Backend\Practicando\Desafio11\node_modules\mongoose\lib\document.js:166:12)
+        at model.Model (C:\Users\ludiv\Downloads\Backend\Practicando\Desafio11\node_modules\mongoose\lib\model.js:125:12)
+        at new model (C:\Users\ludiv\Downloads\Backend\Practicando\Desafio11\node_modules\mongoose\lib\model.js:4691:15)
+        at C:\Users\ludiv\Downloads\Backend\Practicando\Desafio11\node_modules\mongoose\lib\model.js:2896:20
+        at Array.map (<anonymous>)
+        at Function.create (C:\Users\ludiv\Downloads\Backend\Practicando\Desafio11\node_modules\mongoose\lib\model.js:2884:34) {
+      stringValue: `"[ 'camisaLira.jpg' ]"`,
+      messageFormat: undefined,
+      kind: 'string',
+      value: [ 'camisaLira.jpg' ],
+      path: 'thumbnail',
+      reason: null,
+      valueType: 'Array'
+    }
+  },
+  _message: 'Products validation failed',
+  level: 'error',
+  timestamp: '2024-01-24T02:11:01.854Z'
+}
+{
+  index: 0,
+  code: 11000,
+  keyPattern: { code: 1 },
+  keyValue: { code: 'abc1266' },
+  level: 'error',
+  timestamp: '2024-01-24T02:11:16.692Z',
+  [Symbol(errorLabels)]: Set(0) {}
+}
+{
+  index: 0,
+  code: 11000,
+  keyPattern: { code: 1 },
+  keyValue: { code: 'abc1266' },
+  level: 'error',
+  timestamp: '2024-01-24T02:12:17.610Z',
+  [Symbol(errorLabels)]: Set(0) {}
+}
+{ level: 'error', timestamp: '2024-01-24T02:17:31.677Z' }
+{ level: 'error', timestamp: '2024-01-24T02:19:35.481Z' }
+{
+  index: 0,
+  code: 11000,
+  keyPattern: { code: 1 },
+  keyValue: { code: 'abc1266888gfhfgsdfsdfh' },
+  level: 'error',
+  timestamp: '2024-01-24T02:21:05.311Z',
+  [Symbol(errorLabels)]: Set(0) {}
+}
+{
+  index: 0,
+  code: 11000,
+  keyPattern: { code: 1 },
+  keyValue: { code: 'abc1266888gfhfgsdfsdfdfgdfgh' },
+  level: 'error',
+  timestamp: '2024-01-24T02:21:55.259Z',
+  [Symbol(errorLabels)]: Set(0) {}
+}
+{ level: 'error', timestamp: '2024-01-24T02:50:08.039Z' }
+{
+  index: 0,
+  code: 11000,
+  keyPattern: { code: 1 },
+  keyValue: { code: 'elcodigo6' },
+  level: 'error',
+  timestamp: '2024-01-24T03:06:45.065Z',
+  [Symbol(errorLabels)]: Set(0) {}
+}
+{
+  index: 0,
+  code: 11000,
+  keyPattern: { code: 1 },
+  keyValue: { code: 'elcodigo64d5' },
+  level: 'error',
+  timestamp: '2024-01-24T03:10:07.297Z',
+  [Symbol(errorLabels)]: Set(0) {}
+}
+{
+  index: 0,
+  code: 11000,
+  keyPattern: { code: 1 },
+  keyValue: { code: 'elcodigo64dg5' },
+  level: 'error',
+  timestamp: '2024-01-24T03:10:15.986Z',
+  [Symbol(errorLabels)]: Set(0) {}
+}
+{
+  index: 0,
+  code: 11000,
+  keyPattern: { code: 1 },
+  keyValue: { code: 'elcodidssdfgo64dg5' },
+  level: 'error',
+  timestamp: '2024-01-24T03:10:32.038Z',
+  [Symbol(errorLabels)]: Set(0) {}
+}
+{
+  index: 0,
+  code: 11000,
+  keyPattern: { code: 1 },
+  keyValue: { code: 'elcodidssdfgo64dddg5' },
+  level: 'error',
+  timestamp: '2024-01-24T03:11:09.460Z',
+  [Symbol(errorLabels)]: Set(0) {}
+}
+{
+  index: 0,
+  code: 11000,
+  keyPattern: { code: 1 },
+  keyValue: { code: 'elcodidssdfgdddo64dddg5' },
+  level: 'error',
+  timestamp: '2024-01-24T03:11:55.885Z',
+  [Symbol(errorLabels)]: Set(0) {}
+}
+{ level: 'error', timestamp: '2024-01-24T03:28:06.001Z' }
+{
+  index: 0,
+  code: 11000,
+  keyPattern: { code: 1 },
+  keyValue: { code: '9' },
+  level: 'error',
+  timestamp: '2024-01-24T04:49:08.805Z',
+  [Symbol(errorLabels)]: Set(0) {}
+}
+{
+  index: 0,
+  code: 11000,
+  keyPattern: { code: 1 },
+  keyValue: { code: 'abfgjhfghfgdccccdgggdjh' },
+  level: 'error',
+  timestamp: '2024-01-24T05:56:42.589Z',
+  [Symbol(errorLabels)]: Set(0) {}
+}
+{ level: 'error', timestamp: '2024-01-24T07:24:42.498Z' }
+{ level: 'error', timestamp: '2024-01-24T07:29:08.169Z' }
+{ level: 'error', timestamp: '2024-01-24T07:30:25.250Z' }
+{ level: 'error', timestamp: '2024-01-24T07:31:38.291Z' }
+{ level: 'error', timestamp: '2024-01-24T07:41:52.351Z' }
+{
+  code: 404,
+  name: 'USER_NOT_FOUND',
+  level: 'error',
+  timestamp: '2024-01-25T01:59:53.382Z'
+}
