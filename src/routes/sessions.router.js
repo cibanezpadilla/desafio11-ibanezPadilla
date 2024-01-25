@@ -54,8 +54,7 @@ router.post('/login', passport.authenticate('login', {failureMessage: true, fail
 
 router.post("/restart/:id", async (req, res) => { 
   const { pass, repeat } = req.body;
-  const { id } = req.params
-  console.log(1);
+  const { id } = req.params  
   const user = await uManager.findUserByID(id);  
      
 
